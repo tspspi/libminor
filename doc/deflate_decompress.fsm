@@ -1,0 +1,210 @@
+<?xml version='1.0'?>
+<!DOCTYPE qfsmproject SYSTEM 'qfsm.dtd'>
+<qfsmproject version="0.54" author="Qfsm">
+  <machine nummooreout="0" transfontitalic="0" draw_it="1" statefontsize="8" transfont="Helvetica" statefontitalic="0" author="TSP" description="" version="1.0" name="Deflate" arrowtype="1" numbits="4" statefontweight="50" statefont="Helvetica" numin="0" transfontsize="8" transfontweight="50" type="2" numout="0" initialstate="0">
+    <outputnames_moore></outputnames_moore>
+    <inputnames></inputnames>
+    <outputnames></outputnames>
+    <itransition ypos="389" endx="141" xpos="81" endy="389"/>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="389" code="0" xpos="181" linewidth="1">ReadBlockHeader</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="1" entry_actions="" moore_outputs="" ypos="589" code="1" xpos="193" linewidth="1">Failed</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="145" code="2" xpos="417" linewidth="1">ReadUncompressed_LEN_NLEN</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="131" code="3" xpos="663" linewidth="1">ReadUncompressedData</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="1" entry_actions="" moore_outputs="" ypos="108" code="4" xpos="185" linewidth="1">Done</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="378" code="5" xpos="571" linewidth="1">ReadDynamicHeader</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="375" code="6" xpos="697" linewidth="1">Read Codelength Codelengths</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="373" code="7" xpos="875" linewidth="1">ReadLiteralCodelengths</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="370" code="8" xpos="1028" linewidth="1">ReadDistanceCodelengths</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="504" code="10" xpos="780" linewidth="1">LoadConstantTables</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="371" code="11" xpos="1206" linewidth="1">Read Huffdata Literal/Length</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="372" code="12" xpos="1394" linewidth="1">ReadHuffdata_LengthExtra</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="370" code="14" xpos="1554" linewidth="1">ReadHuffdata DistanceCode</state>
+    <state pencolor="0" exit_actions="" radius="40" description="" finalstate="0" entry_actions="" moore_outputs="" ypos="369" code="13" xpos="1705" linewidth="1">ReadExtraBits</state>
+    <transition c1x="153.7567014178274" c2y="323.4289413625457" c1y="272.1333979172724" description="" straight="1" type="2" ypos="349.0214820977227" endx="207.701800630081" xpos="182.3107655539017" endy="359.2172223741404" c2x="281.5009267079838">
+      <from>0</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">3 Bits</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="189.3839736965639" c2y="508.8185856510953" c1y="468.6371713021905" description="" straight="1" type="2" ypos="428.4557569532857" endx="193.0000021052632" xpos="187.5759594922143" endy="549" c2x="191.1919879009136">
+      <from>0</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">Invalid</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="271.0893744380214" c2y="225.8340704139316" c1y="299.6015783161123" description="" straight="1" type="2" ypos="373.369086218293" endx="377.6291517202446" xpos="217.8194857969098" endy="152.0665625117509" c2x="324.359263079133">
+      <from>0</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0">00(ByteMode,Align)</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="84.71289213826017" c2y="218.0013506725962" c1y="288.0027013451924" description="" straight="0" type="2" ypos="349.0040520177886" endx="185.0000017391304" xpos="181.5693373378251" endy="147.9999999999999" c2x="92.85644693869531">
+      <from>0</from>
+      <to>4</to>
+      <inputs default="0" any="0" invert="0">LastBlockwasSetonPreviousBlock</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="324.6641833251196" c2y="387.2870013000718" c1y="387.5796223321933" description="" straight="1" type="2" ypos="387.8722433643147" endx="532.0243521722152" xpos="220.9840989015717" endy="386.9943802679504" c2x="428.3442677486674">
+      <from>0</from>
+      <to>5</to>
+      <inputs default="0" any="0" invert="0">10</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="378.0478692185725" c2y="483.1288221058113" c1y="502.833603703837" description="" straight="0" type="2" ypos="400.5383853018626" endx="740.5442430467142" xpos="219.2996823045017" endy="497.4240405077857" c2x="562.7960561326433">
+      <from>0</from>
+      <to>10</to>
+      <inputs default="0" any="0" invert="0">01</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="340.4710998118832" c2y="41.47339367389435" c1y="52.56987809162399" description="" straight="1" type="2" ypos="108.6374070842286" endx="427.6063831555139" xpos="400.3338115802715" endy="106.4318183425971" c2x="477.6814780851583">
+      <from>2</from>
+      <to>2</to>
+      <inputs default="0" any="0" invert="0">4 Byte</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="272.5992999379342" c2y="516.75984618625" c1y="487.2514582223867" description="" straight="0" type="2" ypos="178.7430702585232" endx="219.758589264898" xpos="395.5196552744523" endy="559.2682341501134" c2x="243.6789446014161">
+      <from>2</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">EOS|~NLEN!=LEN</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="512.710348010461" c2y="141.5501793145341" c1y="142.1387170366435" description="" straight="1" type="2" ypos="142.7272547587529" endx="624.2602826961261" xpos="456.9353806676284" endy="140.9616415924247" c2x="568.4853153532936">
+      <from>2</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="596.8812154219564" c2y="34.61827924312809" c1y="30.85856838489741" description="" straight="1" type="2" ypos="93.05266807797943" endx="677.7022938635366" xpos="650.3508893593265" endy="93.799965656599" c2x="734.4882081461296">
+      <from>3</from>
+      <to>3</to>
+      <inputs default="0" any="0" invert="0">LEN Bytes</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="300.8772281175358" c2y="564.2203043505899" c1y="495.4406087011798" description="" straight="0" type="2" ypos="156.6609130517698" endx="233" xpos="632.3158421763036" endy="589" c2x="305.4386140587679">
+      <from>3</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">Early EOS</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="490.1255492235213" c2y="263.8147554131446" c1y="225.8179434530555" description="" straight="0" type="2" ypos="142.6929852018886" endx="219.1170312005305" xpos="624.7472341252503" endy="376.8718537089221" c2x="420.6208955223228">
+      <from>3</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">(SwitchtoBitmode,Aligned)</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="491.3836056109204" c2y="272.4770049875419" c1y="288.2156486659143" description="" straight="1" type="2" ypos="342.2229123600034" endx="580.2936490569474" xpos="553.1114561800017" endy="339.0946264995914" c2x="628.1392817910827">
+      <from>5</from>
+      <to>5</to>
+      <inputs default="0" any="0" invert="0">14 bits</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="626.2627235708288" c2y="375.0303520920357" c1y="375.0607041840715" description="" straight="1" type="2" ypos="375.0910562761073" endx="657" xpos="610.8940853562433" endy="375" c2x="641.6313617854145">
+      <from>5</from>
+      <to>6</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="448.0786025605356" c2y="541.9440476886202" c1y="537.7201662305218" description="" straight="0" type="2" ypos="397.4962847724235" endx="224.0897948282994" xpos="536.0730064266537" endy="614.1679291467186" c2x="328.0841986944175">
+      <from>5</from>
+      <to>1</to>
+      <inputs default="0" any="0" invert="0">Early EOS</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="622.793312446727" c2y="273.0144324580174" c1y="280.6953472920295" description="" straight="1" type="2" ypos="338.2341987992777" endx="708.5622138835538" xpos="681.2432280568334" endy="336.7075045196718" c2x="760.237204343169">
+      <from>6</from>
+      <to>6</to>
+      <inputs default="0" any="0" invert="0">3*(HCLEN+4) Bits</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="769.6666666666666" c2y="373.6666666666666" c1y="374.3333333333334" description="" straight="1" type="2" ypos="375" endx="835" xpos="737" endy="373" c2x="802.3333333333334">
+      <from>6</from>
+      <to>7</to>
+      <inputs default="0" any="0" invert="0">(BuildTree)</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="812.7289382418367" c2y="279.4004858452501" c1y="270.4216647263614" description="" straight="1" type="2" ypos="334.6" endx="891.1033464491136" xpos="863.8" endy="336.3846721557785" c2x="950.094147241944">
+      <from>7</from>
+      <to>7</to>
+      <inputs default="0" any="0" invert="0">HLIT+257 Codes</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="939.3980968484339" c2y="373.5164534350456" c1y="373.0527581092513" description="" straight="1" type="2" ypos="372.589062783457" endx="988.1985123916004" xpos="914.9978890768507" endy="373.9801487608399" c2x="963.7983046200172">
+      <from>7</from>
+      <to>8</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="952.5426241015127" c2y="267.1804088464908" c1y="276.6930633740749" description="" straight="1" type="2" ypos="333.4475380551897" endx="1039.050665039466" xpos="1011.754461357862" endy="331.5567586930351" c2x="1089.871897296149">
+      <from>8</from>
+      <to>8</to>
+      <inputs default="0" any="0" invert="0">HDIST+1 Codes</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1100.649838999042" c2y="369.2760887735201" c1y="368.801567642149" description="" straight="1" type="2" ypos="368.327046510778" endx="1166.019516956517" xpos="1067.965000020304" endy="369.7506099048912" c2x="1133.334677977779">
+      <from>8</from>
+      <to>11</to>
+      <inputs default="0" any="0" invert="0">(BuildTrees)</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="995.3863659638199" c2y="504.8231804847206" c1y="523.1948891093775" description="" straight="0" type="2" ypos="494.8796491428806" endx="1194.506084577346" xpos="818.9463631195911" endy="409.313051408846" c2x="1122.332453385395">
+      <from>10</from>
+      <to>11</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1655.9112130061" c2y="150.7549244255912" c1y="258.6765262551081" description="" straight="0" type="2" ypos="342.1666774039258" endx="220.8821794200633" xpos="1233.724348650071" endy="392.0678599553895" c2x="480.5934321780145">
+      <from>11</from>
+      <to>0</to>
+      <inputs default="0" any="0" invert="0">EndofBlock(256)</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1112.956839506454" c2y="257.6489255673745" c1y="295.2176123009299" description="" straight="1" type="2" ypos="338.5728308640047" endx="1208.903311127073" xpos="1182.580377846226" endy="331.1055043333117" c2x="1245.389515419327">
+      <from>11</from>
+      <to>11</to>
+      <inputs default="0" any="0" invert="0">Literal</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1281.999622763399" c2y="371.7375876491934" c1y="371.4751752983869" description="" straight="1" type="2" ypos="371.2127629475803" endx="1354" xpos="1245.999434145099" endy="372" c2x="1317.9998113817">
+      <from>11</from>
+      <to>12</to>
+      <inputs default="0" any="0" invert="0">257-285</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1320.53230956778" c2y="270.5115702507743" c1y="277.1185030548339" description="" straight="1" type="2" ypos="335.1122247268588" endx="1405.861012040655" xpos="1378.530932949973" endy="333.7990000998478" c2x="1458.032012517463">
+      <from>12</from>
+      <to>12</to>
+      <inputs default="0" any="0" invert="0">ExtraBits</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1460.681219059071" c2y="371.8316828044781" c1y="371.6658609312005" description="" straight="1" type="2" ypos="371.500039057923" endx="1514.049906444886" xpos="1433.996875366163" endy="371.9975046777557" c2x="1487.365562751979">
+      <from>12</from>
+      <to>14</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1485.7659894641" c2y="272.1194059867464" c1y="271.287691718881" description="" straight="1" type="2" ypos="332.3303235362065" endx="1567.907656174348" xpos="1540.546544120074" endy="332.4956389237717" c2x="1623.421821609726">
+      <from>14</from>
+      <to>14</to>
+      <inputs default="0" any="0" invert="0">Huff Symbol</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1617.666081916227" c2y="369.2450350488425" c1y="369.490070097685" description="" straight="1" type="2" ypos="369.7351051465275" endx="1665" xpos="1593.999122874341" endy="369" c2x="1641.333040958114">
+      <from>14</from>
+      <to>13</to>
+      <inputs default="0" any="0" invert="0"></inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1629.542624101513" c2y="266.1804088464908" c1y="275.6930633740749" description="" straight="1" type="2" ypos="332.4475380551897" endx="1716.050665039466" xpos="1688.754461357862" endy="330.5567586930351" c2x="1766.871897296149">
+      <from>13</from>
+      <to>13</to>
+      <inputs default="0" any="0" invert="0">ExtraBits</inputs>
+      <outputs></outputs>
+    </transition>
+    <transition c1x="1927.21654028599" c2y="466.6982293866884" c1y="495.442810383705" description="" straight="0" type="2" ypos="373.1873913807217" endx="1215.089184624257" xpos="1744.780218116856" endy="409.9536483896717" c2x="1237.652862455123">
+      <from>13</from>
+      <to>11</to>
+      <inputs default="0" any="0" invert="0">Copy Data From Output Buffer and Continue</inputs>
+      <outputs></outputs>
+    </transition>
+  </machine>
+</qfsmproject>
